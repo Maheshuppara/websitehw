@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AÏDO — Homework time. Never a chore again.</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner" id="promoBanner">
+        <div class="promo-content">
+            AÏDO is coming soon. Be among the first to know. <a href="#preorder">Click here &rarr;</a>
+        </div>
+        <button class="promo-close" id="closePromo" aria-label="Dismiss banner">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+    </div>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#" class="logo">AÏDO</a>
+            <nav class="nav-links">
+                <div class="lang-selector">
+                    <button class="lang-btn" id="langBtn">
+                        EN
+                        <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <a href="#" class="active">EN</a>
+                        <a href="#">FR</a>
+                    </div>
+                </div>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#preorder" class="btn btn-black">Pre-order</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container hero-container">
+                <h1 class="hero-title">Homework time.<br>Never a chore again.</h1>
+                <p class="hero-subtitle">AÏDO helps your child understand, make progress and grow more independent, while staying a bridge between them and you, never a replacement.</p>
+                <div class="hero-actions">
+                    <a href="#preorder" class="btn btn-blue">Pre-order</a>
+                    <span class="hero-price-tag">From €49 <span class="delivery-time">(estimated delivery early 2027)</span></span>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="assets/hero_robot.png" alt="AÏDO smart robot head showing smiling mouth and glowing ears" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Preview Section -->
+        <section class="video-preview-section" id="about">
+            <div class="container">
+                <div class="video-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)), url('assets/learning_context.png');">
+                    <div class="video-content">
+                        <h2 class="video-title">Shake it, it listens, it guides.</h2>
+                        <p class="video-subtitle">90 seconds to understand how AÏDO transforms homework time.</p>
+                        <button class="btn btn-play" id="playVideoBtn">
+                            <span class="play-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </span>
+                            Play
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Modal -->
+        <div class="video-modal" id="videoModal">
+            <div class="video-modal-overlay" id="videoModalOverlay"></div>
+            <div class="video-modal-container">
+                <button class="video-modal-close" id="closeVideoBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+                <div class="video-aspect-ratio">
+                    <!-- Placeholder for video demonstration -->
+                    <div class="video-placeholder">
+                        <img src="assets/learning_context.png" alt="Video context">
+                        <div class="video-play-status">Video Player Demo Mode</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Focus & Screen-Free Section -->
+        <section class="focus-section">
+            <div class="container">
+                <div class="focus-text-block">
+                    <h2 class="section-title">Zero screens.<br>One hundred<br>percent focus.</h2>
+                    <p class="section-subtitle">A pen, a notebook and AÏDO lighting up to support, never to distract.</p>
+                </div>
+                
+                <!-- Chat & Action Card -->
+                <div class="interactive-chat-card">
+                    <div class="chat-card-grid">
+                        <div class="chat-photo-side" style="background-image: url('assets/child_notebook.png');">
+                            <!-- Overlay gradients styled in CSS -->
+                        </div>
+                        <div class="chat-dialog-side">
+                            <div class="chat-dialog-header">
+                                <h3 class="dialog-title">One question,<br>one path forward.</h3>
+                                <p class="dialog-subtitle">Not the answer, but the way to reach it. This is what real help looks like, without cheating.</p>
+                                
+                                <div class="category-tabs" id="categoryTabs">
+                                    <button class="tab-btn active" data-category="math">Mathematics</button>
+                                    <button class="tab-btn" data-category="english">English</button>
+                                    <button class="tab-btn" data-category="reading">Reading</button>
+                                </div>
+                            </div>
+                            
+                            <div class="chat-messages-container" id="chatMessages">
+                                <!-- Math Messages (Default) -->
+                                <div class="chat-flow active" id="flow-math">
+                                    <div class="message user-msg">
+                                        <div class="msg-bubble">
+                                            <span class="mic-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg></span>
+                                            Aïdo, I'm stuck on 7 x 6...
+                                        </div>
+                                    </div>
+                                    <div class="message robot-msg">
+                                        <div class="avatar-circle"></div>
+                                        <div class="msg-bubble">
+                                            <span class="speaker-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></span>
+                                            Let's do it together. Do you remember 7 x 5?
+                                        </div>
+                                    </div>
+                                    <div class="message user-msg">
+                                        <div class="msg-bubble">
+                                            <span class="mic-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg></span>
+                                            35
+                                        </div>
+                                    </div>
+                                    <div class="message robot-msg">
+                                        <div class="avatar-circle"></div>
+                                        <div class="msg-bubble">
+                                            <span class="speaker-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></span>
+                                            Yes! And 7 x 6 is 35 plus one more group of 7. How much is that?
+                                        </div>
+                                    </div>
+                                    <div class="message user-msg">
+                                        <div class="msg-bubble">
+                                            <span class="mic-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg></span>
+                                            42?
+                                        </div>
+                                    </div>
+                                    <div class="message robot-msg">
+                                        <div class="avatar-circle"></div>
+                                        <div class="msg-bubble">
+                                            <span class="speaker-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></span>
+                                            Well done. And you're the one who found it.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- English Messages -->
+                                <div class="chat-flow" id="flow-english">
+                                    <div class="message user-msg">
+                                        <div class="msg-bubble">
+                                            <span class="mic-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg></span>
+                                            Aïdo, how do you spell 'beautiful'?
+                                        </div>
+                                    </div>
+                                    <div class="message robot-msg">
+                                        <div class="avatar-circle"></div>
+                                        <div class="msg-bubble">
+                                            <span class="speaker-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></span>
+                                            Let's sound it out together. What is the first syllable you hear?
+                                        </div>
+                                    </div>
+                                    <div class="message user-msg">
+                                        <div class="msg-bubble">
+                                            <span class="mic-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg></span>
+                                            Beau?
+                                        </div>
+                                    </div>
+                                    <div class="message robot-msg">
+                                        <div class="avatar-circle"></div>
+                                        <div class="msg-bubble">
+                                            <span class="speaker-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></span>
+                                            Correct! That is spelled B-E-A-U. What is the next syllable?
+                                        </div>
+                                    </div>
+                                    <div class="message user-msg">
+                                        <div class="msg-bubble">
+                                            <span class="mic-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg></span>
+                                            ti-ful
+                                        </div>
+                                    </div>
+                                    <div class="message robot-msg">
+                                        <div class="avatar-circle"></div>
+                                        <div class="msg-bubble">
+                                            <span class="speaker-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></span>
+                                            Great work. So put it all together: B-E-A-U-T-I-F-U-L.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Reading Messages -->
+                                <div class="chat-flow" id="flow-reading">
+                                    <div class="message user-msg">
+                                        <div class="msg-bubble">
+                                            <span class="mic-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg></span>
+                                            Aïdo, I don't know the word 'continent'...
+                                        </div>
+                                    </div>
+                                    <div class="message robot-msg">
+                                        <div class="avatar-circle"></div>
+                                        <div class="msg-bubble">
+                                            <span class="speaker-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></span>
+                                            Let's check the context. The book says 'Europe is a continent'. What do you think a continent is?
+                                        </div>
+                                    </div>
+                                    <div class="message user-msg">
+                                        <div class="msg-bubble">
+                                            <span class="mic-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg></span>
+                                            A big land?
+                                        </div>
+                                    </div>
+                                    <div class="message robot-msg">
+                                        <div class="avatar-circle"></div>
+                                        <div class="msg-bubble">
+                                            <span class="speaker-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></span>
+                                            Yes! A very large area of land. Earth has seven of them.
+                                        </div>
+                                    </div>
+                                    <div class="message user-msg">
+                                        <div class="msg-bubble">
+                                            <span class="mic-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg></span>
+                                            Like groups of countries?
+                                        </div>
+                                    </div>
+                                    <div class="message robot-msg">
+                                        <div class="avatar-circle"></div>
+                                        <div class="msg-bubble">
+                                            <span class="speaker-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></span>
+                                            Exactly! You've figured it out perfectly on your own.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Two Ways Section -->
+        <section class="two-ways-section">
+            <div class="container">
+                <h2 class="section-title text-center">2 ways to help.</h2>
+                <div class="mode-switch-wrapper">
+                    <div class="mode-switch" id="modeSwitch">
+                        <button class="mode-btn active" data-mode="own">On their own</button>
+                        <button class="mode-btn" data-mode="guided">Guided session</button>
+                    </div>
+                </div>
+
+                <div class="two-ways-grid">
+                    <!-- Left Column: Carousel Card -->
+                    <div class="card card-carousel">
+                        <div class="carousel-header">
+                            <h3 class="carousel-section-subtitle" id="carouselSubTitle">A helping hand, whenever they need it.</h3>
+                        </div>
+                        
+                        <div class="carousel-container">
+                            <div class="carousel-track" id="carouselTrack">
+                                <!-- Slides for 'On their own' (Default) -->
+                                <div class="carousel-slide active" data-slide="0">
+                                    <div class="slide-num">01</div>
+                                    <h4 class="slide-title">Stuck on a question?</h4>
+                                    <p class="slide-desc">They shake AÏDO, read the question out loud, and AÏDO guides them towards the solution step-by-step.</p>
+                                    <div class="slide-image-placeholder" style="background-image: url('assets/hero_robot.png');"></div>
+                                </div>
+                                <div class="carousel-slide" data-slide="1">
+                                    <div class="slide-num">02</div>
+                                    <h4 class="slide-title">Step-by-step guidance</h4>
+                                    <p class="slide-desc">Instead of giving the direct answer, AÏDO breaks down the problem and prompts them to think.</p>
+                                    <div class="slide-image-placeholder" style="background-image: url('assets/child_notebook.png');"></div>
+                                </div>
+                                <div class="carousel-slide" data-slide="2">
+                                    <div class="slide-num">03</div>
+                                    <h4 class="slide-title">Positive reinforcement</h4>
+                                    <p class="slide-desc">AÏDO celebrates their success with encouraging voice prompts and colorful light displays.</p>
+                                    <div class="slide-image-placeholder" style="background-image: url('assets/bravo_moment.png');"></div>
+                                </div>
+                                <div class="carousel-slide" data-slide="3">
+                                    <div class="slide-num">04</div>
+                                    <h4 class="slide-title">Focus on the paper</h4>
+                                    <p class="slide-desc">No screen distractions. Children keep their eyes on their notebook and pencil.</p>
+                                    <div class="slide-image-placeholder" style="background-image: url('assets/learning_context.png');"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-footer">
+                            <div class="carousel-dots" id="carouselDots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <div class="carousel-arrows">
+                                <button class="arrow-btn" id="prevSlide" aria-label="Previous slide">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                                </button>
+                                <button class="arrow-btn" id="nextSlide" aria-label="Next slide">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Parent App Card -->
+                    <div class="card card-parent" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('assets/parent_phone.png');">
+                        <div class="parent-card-content">
+                            <h3 class="parent-card-title">You know where they stand, without sitting beside them.</h3>
+                            <p class="parent-card-desc">Progress, sticking points, topics to review... AÏDO gives you the right signals to step in when it's really useful.</p>
+                            <a href="#preorder" class="btn btn-white">Pre-order</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teaching Philosophy Section -->
+        <section class="philosophy-section">
+            <div class="container text-center">
+                <h2 class="philosophy-title">Teaching<br>at the heart<br>of the product.</h2>
+                <p class="philosophy-subtitle">AÏDO was designed with teachers and education specialists to support children with method. Because explaining well is a craft, AÏDO doesn't simply give answers: it asks the right questions, rephrases and helps the child find the way on their own.</p>
+            </div>
+        </section>
+
+        <!-- Product Details / Spec Grid Section -->
+        <section class="specs-grid-section">
+            <div class="container specs-grid-layout">
+                <!-- Left Details Card -->
+                <div class="specs-details-card">
+                    <h2 class="specs-title">Take a<br>closer look.</h2>
+                    <div class="specs-grid-2x2">
+                        <div class="spec-item">
+                            <div class="spec-icon-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+                            </div>
+                            <div class="spec-text">
+                                <span class="spec-label">3 metres.</span>
+                                <span class="spec-sublabel">High-sensitivity microphone</span>
+                            </div>
+                        </div>
+                        
+                        <div class="spec-item">
+                            <div class="spec-icon-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            </div>
+                            <div class="spec-text">
+                                <span class="spec-label">LED ring.</span>
+                                <span class="spec-sublabel">The language of progress.</span>
+                            </div>
+                        </div>
+
+                        <div class="spec-item">
+                            <div class="spec-icon-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2" ry="2"></rect><line x1="22" y1="11" x2="22" y2="13"></line></svg>
+                            </div>
+                            <div class="spec-text">
+                                <span class="spec-label">USB-C.</span>
+                                <span class="spec-sublabel">Full charge in 2 hrs 30.</span>
+                            </div>
+                        </div>
+
+                        <div class="spec-item">
+                            <div class="spec-icon-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8"></path><path d="M8 12h8"></path></svg>
+                            </div>
+                            <div class="spec-text">
+                                <span class="spec-label">Two to take a break.</span>
+                                <span class="spec-sublabel">One press to start.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="specs-actions">
+                        <a href="#preorder" class="btn btn-black">Pre-order</a>
+                    </div>
+                </div>
+
+                <!-- Right Packaging Card -->
+                <div class="specs-image-card" style="background-image: url('assets/box_packaging.png');">
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefit Highlights -->
+        <section class="benefits-section">
+            <div class="container benefits-grid">
+                <!-- Left Card -->
+                <div class="benefit-card">
+                    <div class="benefit-image-wrapper">
+                        <img src="assets/robot_side_lights.png" alt="AÏDO side view showing green and orange lights" class="benefit-image">
+                    </div>
+                    <div class="benefit-text">
+                        <h3 class="benefit-title">Helps them understand, not copy.</h3>
+                        <p class="benefit-desc">Always with them, never in their place.</p>
+                    </div>
+                </div>
+                
+                <!-- Right Card -->
+                <div class="benefit-card">
+                    <div class="benefit-image-wrapper">
+                        <img src="assets/bravo_moment.png" alt="AÏDO robot glowing during a homework session with children" class="benefit-image">
+                    </div>
+                    <div class="benefit-text">
+                        <h3 class="benefit-title">It brings the joy back to homework.</h3>
+                        <p class="benefit-desc">Always motivating, never a burden.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Origins & Data Privacy -->
+        <section class="origins-section">
+            <div class="container">
+                <div class="origins-header text-center">
+                    <h2 class="origins-title">Designed in Marseille.<br>Made in France.</h2>
+                    <p class="origins-subtitle">From industrial design to final assembly, AÏDO never leaves the continent. Including its servers.</p>
+                </div>
+                
+                <div class="origins-grid">
+                    <!-- Photo Card -->
+                    <div class="origins-photo-card" style="background-image: url('assets/design_workshop.png');"></div>
+                    
+                    <!-- Data Privacy Card -->
+                    <div class="data-privacy-card">
+                        <h3 class="privacy-card-title">Your data stays yours.</h3>
+                        <p class="privacy-card-desc">No reselling. No behavioural analysis. No advertising. You can erase everything in two clicks from the parent app.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Card Section -->
+        <section class="pricing-section" id="preorder">
+            <div class="container">
+                <div class="pricing-container-card">
+                    <div class="pricing-header text-center">
+                        <h2 class="pricing-title">A simple model,<br>with no nasty surprises.</h2>
+                        <span class="pricing-price-label">from</span>
+                        <div class="pricing-amount">€49</div>
+                        <p class="pricing-subtext">The AÏDO box, with the first year included, then a cancellable annual subscription.</p>
+                    </div>
+                    
+                    <div class="pricing-columns">
+                        <!-- Column 1 -->
+                        <div class="pricing-col">
+                            <h4 class="col-header">THE AÏDO BOX</h4>
+                            <div class="col-price">From €49</div>
+                            <p class="col-desc">The physical companion, ready to support homework at home.</p>
+                        </div>
+                        
+                        <!-- Column 2 -->
+                        <div class="pricing-col highlighted-col">
+                            <h4 class="col-header">1ST YEAR INCLUDED</h4>
+                            <div class="col-price">AÏDO+ free for 12 months</div>
+                            <p class="col-desc">Every subject, unlimited use, parent tracking included.</p>
+                        </div>
+                        
+                        <!-- Column 3 -->
+                        <div class="pricing-col">
+                            <h4 class="col-header">THEN €19.99/MONTH</h4>
+                            <div class="col-price">A single family subscription</div>
+                            <p class="col-desc">Child and parent included, no hidden options, cancel any time.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-footer text-center">
+                        <a href="#" class="btn btn-white">Pre-order AÏDO</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specifications list card -->
+        <section class="specifications-list-section">
+            <div class="container">
+                <div class="specs-list-card">
+                    <div class="specs-list-grid">
+                        <div class="specs-list-content">
+                            <h3 class="specs-list-title">What's in the box.</h3>
+                            
+                            <div class="specs-list-rows">
+                                <div class="specs-row-group">
+                                    <div class="specs-group-col">
+                                        <h4 class="group-title">Dimensions & materials</h4>
+                                        <ul class="group-list">
+                                            <li>&empty; 94 &times; H 89 mm &mdash; 200 g</li>
+                                            <li>Matte white ABS/PC shell</li>
+                                            <li>Translucent silicone diffuser ring</li>
+                                            <li>Non-slip TPE base</li>
+                                        </ul>
+                                    </div>
+                                    <div class="specs-group-col">
+                                        <h4 class="group-title">Audio</h4>
+                                        <ul class="group-list">
+                                            <li>1 high-sensitivity microphone</li>
+                                            <li>Speaker 3 W / 4 &Omega;</li>
+                                            <li>PCM16 mono 24 kHz</li>
+                                        </ul>
+                                    </div>
+                                    <div class="specs-group-col">
+                                        <h4 class="group-title">App compatibility</h4>
+                                        <ul class="group-list">
+                                            <li>iOS 17 and above</li>
+                                            <li>Android 8 (API 26) and above</li>
+                                            <li>Mac, PC: alternative web setup</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="specs-row-group border-top">
+                                    <div class="specs-group-col">
+                                        <h4 class="group-title">Battery & battery life</h4>
+                                        <ul class="group-list">
+                                            <li>Li-ion 3.7 V / 1200 mAh</li>
+                                            <li>Up to 8 hrs of active use</li>
+                                            <li>Up to 7 days on standby</li>
+                                            <li>Full charge in 2 hrs 30</li>
+                                        </ul>
+                                    </div>
+                                    <div class="specs-group-col">
+                                        <h4 class="group-title">Connectivity</h4>
+                                        <ul class="group-list">
+                                            <li>Wi-Fi 2.4 GHz</li>
+                                            <li>Bluetooth 5 (provisioning)</li>
+                                            <li>USB-C 5 V / 1 A</li>
+                                        </ul>
+                                    </div>
+                                    <div class="specs-group-col button-col">
+                                        <!-- App Stores links -->
+                                        <div class="app-buttons">
+                                            <a href="#" class="app-btn store-apple">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.2.67-2.92 1.49-.62.71-1.16 1.85-1.01 2.96 1.12.09 2.27-.56 2.94-1.39z"/></svg>
+                                                <div class="app-btn-text">
+                                                    <span class="app-btn-sub">Download on the</span>
+                                                    <span class="app-btn-main">App Store</span>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="app-btn store-play">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.25 2.53c-.15.17-.25.44-.25.8v17.33c0 .36.1.63.25.8l.06.06L13.1 12l.02-.27V11.7L3.31 2.47l-.06.06zM16.51 8.61l-3.39 3.39v.05l3.39 3.39.06-.03 4.01-2.28c1.14-.65 1.14-1.71 0-2.36l-4.01-2.28-.06.12zM13.12 12.05l-3.4-3.4-6.42-3.66c-.3-.17-.5-.07-.5.28v.06l8.83 8.35 1.49-1.63zM13.12 11.95l-1.49 1.63-8.83 8.35v.06c0 .35.2.45.5.28l6.42-3.66 3.4-3.4v-.63z"/></svg>
+                                                <div class="app-btn-text">
+                                                    <span class="app-btn-sub">GET IT ON</span>
+                                                    <span class="app-btn-main">Google Play</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="specs-list-image-side">
+                            <img src="assets/box_packaging.png" alt="AÏDO Product Box showing branding and robot" class="box-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container faq-container">
+                <h2 class="faq-section-title">Frequently asked<br>questions</h2>
+                
+                <div class="faq-accordion" id="faqAccordion">
+                    <!-- Item 1 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Does my child have to look at a screen?</span>
+                            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>No. AÏDO is designed to be completely screen-free. It uses voice interaction and glowing indicators to guide children, keeping them focused on their paper notebook.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>How does AÏDO know what my child is working on?</span>
+                            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>By shaking AÏDO, your child activates it. They read the question aloud, and AÏDO's high-sensitivity microphones listen to guide them step-by-step.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Is my child's data protected?</span>
+                            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Absolutely. Your data stays yours. No reselling, no behavioural analysis, and no advertising. You can erase everything in two clicks from the parent app.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Which subjects are covered?</span>
+                            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>AÏDO currently covers Mathematics, English, and Reading for primary school children, following national educational guidelines.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Can I use it for several children?</span>
+                            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Yes, you can register multiple child profiles under a single family subscription, allowing each child to progress at their own pace.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>How is AÏDO designed pedagogically?</span>
+                            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>AÏDO was designed with teachers and child education specialists. Instead of giving answers, it rephrases questions to help children think and find solutions on their own.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-card">
+                <div class="footer-main-row">
+                    <div class="footer-brand-col">
+                        <h3 class="footer-logo">AÏDO</h3>
+                        <p class="footer-tagline">Learning how to learn, at a child's level.</p>
+                        <a href="#preorder" class="btn btn-black">Pre-order</a>
+                    </div>
+                    
+                    <div class="footer-links-grid">
+                        <div class="footer-links-col">
+                            <h5 class="links-title">PRODUCT</h5>
+                            <ul>
+                                <li><a href="#preorder">Pre-order</a></li>
+                                <li><a href="#about">Features</a></li>
+                                <li><a href="#about">How it works</a></li>
+                                <li><a href="#faqAccordion">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-links-col">
+                            <h5 class="links-title">COMPANY</h5>
+                            <ul>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Press</a></li>
+                                <li><a href="#">Contact us</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-links-col">
+                            <h5 class="links-title">LEGAL</h5>
+                            <ul>
+                                <li><a href="#">Terms of sale</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Legal notice</a></li>
+                                <li><a href="#">GDPR</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="footer-divider">
+                
+                <div class="footer-bottom-row">
+                    <div class="footer-notice">
+                        Visuals are non-contractual &mdash; AÏDO is under development and the final product may differ.
+                    </div>
+                    <div class="footer-copyright-social">
+                        <div class="footer-copyright">
+                            &copy; 2026 AÏDO &mdash; Designed in France &#127467;&#127479; &bull; Data hosted in Europe
+                        </div>
+                        <div class="footer-socials">
+                            <a href="#">Instagram</a>
+                            <a href="#">LinkedIn</a>
+                            <a href="#">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
